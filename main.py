@@ -7,7 +7,7 @@ pygame.font.init()
 class Character:
     def __init__(self,background):
         self.background = background
-        self.vin = pygame.image.load("modelsandmusic/vin pixelc.png")
+        self.vin = pygame.image.load(r"Desktop\Github Void Key\Unofficial-Mistborn-Platformer\modelsandmusic\vin pixelc.png")
         self.char = self.vin
         self.char_x = 200
         self.char_y = 440
@@ -51,9 +51,9 @@ class Character:
 class Coin:
     def __init__(self, background):
         self.background_screen = background
-        self.coin = pygame.image.load("modelsandmusic/coin.png")
-        self.coin1 = pygame.image.load("modelsandmusic/coin.png")
-        self.coin2 = pygame.image.load("modelsandmusic/coin.png")
+        self.coin = pygame.image.load(r"Desktop\Github Void Key\Unofficial-Mistborn-Platformer\modelsandmusic/coin.png")
+        self.coin1 = pygame.image.load(r"Desktop\Github Void Key\Unofficial-Mistborn-Platformer\modelsandmusic/coin.png")
+        self.coin2 = pygame.image.load(r"Desktop\Github Void Key\Unofficial-Mistborn-Platformer\modelsandmusic/coin.png")
 
         self.character = Character(self.background_screen)
         self.coin_y = -1
@@ -84,13 +84,13 @@ class Coin:
 
     def num_coins(self):
 
-        model = pygame.image.load("modelsandmusic/coin2.png")
+        model = pygame.image.load(r"Desktop\Github Void Key\Unofficial-Mistborn-Platformer\modelsandmusic/coin2.png")
         self.background_screen.blit(model, (3, 3))
         font1 = pygame.font.SysFont("Britannic", 20, bold=False, italic=False)
         line1 = font1.render(f"X{self.coin_num}", True, (0, 0, 0))
         self.background_screen.blit(line1,(25, 3))
     def coin_collectible(self):
-        model = pygame.image.load("modelsandmusic/coin.png")
+        model = pygame.image.load(r"Desktop\Github Void Key\Unofficial-Mistborn-Platformer\modelsandmusic/coin.png")
         self.background_screen.blit(model, (self.collectible_x, self.collectible_y))
     def grav(self):
         if self.character.char_y > 440:
@@ -117,7 +117,7 @@ class Platform:
 
 class Enemies:
     def __init__(self, surface):
-        self.koloss = pygame.image.load("modelsandmusic\koloss.png")
+        self.koloss = pygame.image.load(r"Desktop\Github Void Key\Unofficial-Mistborn-Platformer\modelsandmusic\koloss.png")
         self.koloss_x = 340
         self.koloss_y = 430
         self.surface = surface
@@ -132,7 +132,7 @@ class Enemies:
 
 class Game:
     def __init__(self):
-
+        self.surface = pygame.display.set_mode((900, 500))
         self.character = Character(self.surface)
         self.character.draw()
         self.character.down()
